@@ -1,0 +1,10 @@
+        config.properties:
+        
+        password-authenticator.name=ldap
+        ldap.url=ldap://your_domain.net:389
+        ldap.user-bind-pattern=${USER}@your.domain.here.net
+        ldap.allow-insecure=true
+        ldap.bind-dn=CN=Bind User,U=SEP,OU=Users,OU=your_domain,DC=your,DC=domain,DC=here,DC=net
+        ldap.bind-password=StarburstR0cks!
+        ldap.group-auth-pattern=(&(objectClass=person)(sAMAccountName=${USER})(memberof=CN=SEPUsers,U=SEP,OU=Users,OU=your_domain,DC=your,DC=domain,DC=here,DC=net))
+        ldap.user-base-dn=OU=SEP,OU=Users,OU=your_domain,DC=your,DC=domain,DC=here,DC=net
