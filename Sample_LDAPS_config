@@ -1,0 +1,10 @@
+config.properties        
+        
+        password-authenticator.name=ldap
+        ldap.url=ldaps://your.domain.here:3269
+        ldap.user-bind-pattern=${USER}@XX.XXXX.XXX.net
+        ldap.ssl-trust-certificate=secretRef:ldaps-ca:XXXX.XX.XXXX.XXXXX.net_SUBORDINATECA-CA.cer
+        ldap.bind-dn=CN=Bind User,OU=Users,OU=XXXX,DC=XXX,DC=XXXX,DC=XXX,DC=XX
+        ldap.bind-password=XXXXX
+        ldap.group-auth-pattern=(&(objectClass=person)(sAMAccountName=${USER})(memberof=CN=XXX,OU=XXX,OU=XX,OU=XXX,DC=XX,DC=XXX,DC=XXXX,DC=net))
+        ldap.user-base-dn=OU=XX,OU=XX,OU=XXX,DC=XX,DC=XXX,DC=XXX,DC=net
