@@ -7,6 +7,8 @@
 # Given the vanilla install settings, it is possible to get an out of memory issue.
 # Increase the following settings on the coordinator and worker
 # query.max-memory-per-node=391468kB
+# There needs to a schema in place with a matching name, for example:
+# create schema hive.gmtpchsf100 WITH (location = 'gs://hsbc-gcs/gmtpchsf100/');
 ### Script runs from here
 SCHEMA=sf100
 PREFIX=hive.gmtpch
