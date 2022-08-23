@@ -4,19 +4,21 @@ Running this script creates SQL output. Output to a file, e.g. ../sf100.sh > tes
 
 The SQL script creates the tables based on the SFXXX Schemas in Starburst - e.g. SF100, SF1000, etc.
 
-There needs to a schema in place with a matching name in the scripts, for example:
+There needs to be a schema in place with a matching name in the scripts, for example:
 
 create schema hive.gmtpchsf100 WITH (location = 'gs://your_gcs_storage/gmtpchsf100/');
 
-The scripts append the Schema name to the location above, for ease of use, create a schema that ends with the TPCH schema - "sf100" in the aboce example. 
+The scripts append the Schema name to the location above. For ease of use, create a schema that ends with the TPCH schema - "sf100" in the above example. 
 
 Download the trino CLI and rename the JAR file to trino.
 
 https://trino.io/docs/current/client/cli.html
 
-The output SQL file can be run as a CLI, for example: 
+The output SQL file (e.g. test.sql from the script output) can be input to the trino CLI, for example: 
 
 /.../cli/trino --user starburst_service  --server=https://10.10.10.10:8443 --file test.sql --password --insecure 
+
+The above command will prompt you for a password.
 
 Given the vanilla install settings, it is possible to get an out of memory issue.
 Increase the following settings on the coordinator and worker
@@ -28,11 +30,11 @@ jvm.config.j2:
 config.properties.j2:
 query.max-memory-per-node=32GB
 
-The above assumes you have >> 64GB of memory on the coordinator and workers.
+The above assumes you have >= 64GB of memory on the coordinator and workers.
 
 ## Scripts Files:</br>
-**sf100.sh** - Uses the TPCH.SF100 Schema, and does a CREATE TABLE AS SELECT syntax to create the 8 x TPCH Tables on GCS (ORC Format). Approx 120GB of data is read from the TPCH Tables. LINEITEM is 85GB at source.</br>
+**sf100.sh** - Uses the TPCH.SF100 Schema, and uses a CREATE TABLE XXX AS SELECT syntax to create the 8 x TPC-H Tables on Object Storage (e.g. GCS, ORC Format). Approx 120GB of data is read from the TPC-H Tables. LINEITEM is 85GB at source.</br>
 
-**sf100_v2.sh** - Same as above, but creates the LINEITEM Table empty, and then INSERTS each year one at a time. There is data from years 1992 to 1998 inclusive. The INSERTS filter on those years. All other tables are created using a CREATE TABLE AS SELECT syntax (just one operation). Approx 120GB of data is read from the TPCH Tables. LINEITEM is 85GB at source.</br>
+**sf100_v2.sh** - Same as above, but creates the LINEITEM Table empty, and then INSERTS each year one at a time. There is data from years 1992 to 1998 inclusive in TPC-H. The INSERTS filter on those years, one year at a time. All other tables are created using a CREATE TABLE XXX AS SELECT syntax (just one operation). Approx 120GB of data is read from the TPCH Tables. LINEITEM is 85GB at source.</br>
 
-**sf1000.sh** - Uses the TPCH.SF100 Schema. The LINEITEM Table is created empty, and data is INSERTED. The INSERTS are filtered on year and another unit - quarter by default. This creates 28 splits (7 years x 4 quarters).  </br>
+**sf1000.sh** - Uses the TPCH.SF1000 Schema. The LINEITEM Table is created empty, and data is INSERTED. The INSERTS are filtered on year and another unit - quarter by default. This creates 28 splits (7 years x 4 quarters).  </br>
