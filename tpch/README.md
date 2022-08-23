@@ -28,7 +28,7 @@ query.max-memory-per-node=32GB
 
 The above assumes you have >> 64GB of memory on the coordinator and workers.
 
-Scripts Files:</br>
+##Scripts Files:</br>
 **sf100.sh** - Uses the TPCH.SF100 Schema, and does a CREATE TABLE AS SELECT syntax to create the 8 x TPCH Tables on GCS (ORC Format). Approx 120GB of data is read from the TPCH Tables. LINEITEM is 85GB at source.</br>
 
 **sf100_v2.sh** - Same as above, but creates the LINEITEM Table empty, and then INSERTS each year one at a time. There is data from years 1992 to 1998 inclusive. The INSERTS filter on those years. All other tables are created using a CREATE TABLE AS SELECT syntax (just one operation). Approx 120GB of data is read from the TPCH Tables. LINEITEM is 85GB at source.</br>
