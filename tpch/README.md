@@ -38,3 +38,10 @@ The above assumes you have >= 64GB of memory on the coordinator and workers.
 **sf100_v2.sh** - Same as above, but creates the LINEITEM Table empty, and then INSERTS each year one at a time. There is data from years 1992 to 1998 inclusive in TPC-H. The INSERTS filter on those years, one year at a time. All other tables are created using a CREATE TABLE XXX AS SELECT syntax (just one operation). Approx 120GB of data is read from the TPCH Tables. LINEITEM is 85GB at source.</br>
 
 **sf1000.sh** - Uses the TPCH.SF1000 Schema. The LINEITEM Table is created empty, and data is INSERTED. The INSERTS are filtered on year and another unit - quarter by default. This creates 28 splits (7 years x 4 quarters).  </br>
+
+## File Formats:
+
+The scipts (other than sf100.sh) provide an option to define the file format - e.g. ORC or Parquet.
+This is defined in the CREATE TABLE docs below. Keep in mind, creating a table in the DELTA and ICEBERG schemas, will automatically create files in those respective formats.
+
+https://docs.starburst.io/latest/sql/create-table.html
