@@ -3,7 +3,7 @@ SCHEMA=sf1000
 PREFIX=hive.gmtpch
 FORMAT=\'ORC\'
 #FORMAT=\'PARQUET\'
-TABLE=shipdate
+COLUMN=shipdate
 ITERATIONS=4
 UNIT=quarter
 echo 'set session resource_overcommit=true;'
@@ -19,7 +19,7 @@ do
 	do
 		for ((x = 1 ; x < $ITERATIONS +1 ; x++)); do
 		echo 'select current_timestamp;' 
-		echo insert into $PREFIX$SCHEMA.$i 'SELECT * from tpch.'$SCHEMA.$i where extract'('year from $TABLE ')' = $j and extract'('$UNIT from $TABLE')' = $x ';'
+		echo insert into $PREFIX$SCHEMA.$i 'SELECT * from tpch.'$SCHEMA.$i where extract'('year from $COLUMN ')' = $j and extract'('$UNIT from $COLUMN')' = $x ';'
 		done
 	done
 	echo 'analyze' $PREFIX$SCHEMA'.'$i';'
