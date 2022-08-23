@@ -2,17 +2,19 @@
 
 Running this script creates SQL output. Output to a file, e.g. ../sf100.sh > test.sql.
 
-The SQL script creates the tables based on the SF100 schema in Starburst.
+The SQL script creates the tables based on the SFXXX Schemas in Starburst - e.g. SF100, SF1000, etc.
 
-There needs to a schema in place with a matching name, for example:
+There needs to a schema in place with a matching name in the scripts, for example:
 
 create schema hive.gmtpchsf100 WITH (location = 'gs://your_gcs_storage/gmtpchsf100/');
+
+The scripts append the Schema name to the location above, for ease of use, create a schema that ends with the TPCH schema - "sf100" in the aboce example. 
 
 Download the trino CLI and rename the JAR file to trino.
 
 https://trino.io/docs/current/client/cli.html
 
-The output SQL file can be run as a CLI, for example 
+The output SQL file can be run as a CLI, for example: 
 
 /.../cli/trino --user starburst_service  --server=https://10.10.10.10:8443 --file test.sql --password --insecure 
 
