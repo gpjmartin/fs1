@@ -23,19 +23,22 @@ The above command will prompt you for a password.
 Given the vanilla install settings, it is possible to get an out of memory issue.
 Increase the following settings on the coordinator and worker
 
-jvm.config.j2:
--Xmx48G
+jvm.config.j2: </br>
+-Xmx48G </br>
 -Xms48G
 
-config.properties.j2:
+config.properties.j2:</br>
 query.max-memory-per-node=32GB
 
 The above assumes you have >= 64GB of memory on the coordinator and workers.
 
 ## Scripts Files:</br>
-**sf100.sh** - Uses the TPCH.SF100 Schema, and uses a CREATE TABLE XXX AS SELECT syntax to create the 8 x TPC-H Tables on Object Storage (e.g. GCS, ORC Format). Approx 120GB of data is read from the TPC-H Tables. LINEITEM is 85GB at source.</br>
+**sf100.sh** - Uses the TPCH.SF100 Schema, and uses a CREATE TABLE XXX AS SELECT syntax to create the 8 x TPC-H Tables on Object Storage (e.g. GCS, ORC Format). </br>
+Approx 120GB of data is read from the TPC-H Tables. LINEITEM is 85GB at source.</br>
 
-**sf100_v2.sh** - Same as above, but creates the LINEITEM Table empty, and then INSERTS each year one at a time. There is data from years 1992 to 1998 inclusive in TPC-H. The INSERTS filter on those years, one year at a time. All other tables are created using a CREATE TABLE XXX AS SELECT syntax (just one operation). Approx 120GB of data is read from the TPCH Tables. LINEITEM is 85GB at source.</br>
+**sf100_v2.sh** - Same as above, but creates the LINEITEM Table empty, and then INSERTS each year one at a time. There is data from years 1992 to 1998 inclusive in TPC-H. The INSERTS filter on those years, one year at a time. </br>
+All other tables are created using a CREATE TABLE XXX AS SELECT syntax (just one operation). </br>
+Approx 120GB of data is read from the TPCH Tables. LINEITEM is 85GB at source.</br>
 
 **sf1000.sh** - Uses the TPCH.SF1000 Schema. The LINEITEM Table is created empty, and data is INSERTED. The INSERTS are filtered on year and another unit - quarter by default. This creates 28 splits (7 years x 4 quarters).  </br>
 
