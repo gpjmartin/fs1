@@ -1,4 +1,4 @@
-# Scripts for TPCH Data generation
+# Scripts for TPC-H Data generation
 
 Running this script creates SQL output. Output to a file, e.g. ../sf100.sh > test.sql.
 
