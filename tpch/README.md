@@ -43,6 +43,9 @@ All other tables are created using a CREATE TABLE XXX AS SELECT syntax (just one
 Approx 120GB of data is read from the TPCH Tables. LINEITEM is 85GB at source.</br>
 
 **sf1000.sh** - Uses the TPCH.SF1000 Schema. The LINEITEM Table is created empty, and data is INSERTED. The INSERTS are filtered on year and another unit - quarter by default. This creates 28 splits (7 years x 4 quarters).  </br>
+All other tables are created using a CREATE TABLE XXX AS SELECT syntax (just one operation). </br>
+Approx 1.2TB of data is read from the TPCH Tables. LINEITEM is ~850GB at source.</br>
+
 
 ## File Formats:
 
