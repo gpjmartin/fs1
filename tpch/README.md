@@ -46,6 +46,8 @@ Approx 120GB of data is read from the TPCH Tables. LINEITEM is 85GB at source.</
 All other tables are created using a CREATE TABLE XXX AS SELECT syntax (just one operation). </br>
 Approx 1.2TB of data is read from the TPCH Tables. LINEITEM is ~850GB at source.</br>
 
+**Note:** The sf10000 schema can be set in the parameter section in the sf1000.sh script also. This will read approx 12TB of data from the SF10000 schema to generate the data on Object Storage.</br>
+
 
 ## File Formats:
 
