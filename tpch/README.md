@@ -46,7 +46,7 @@ Approx 120GB of data is read from the TPCH Tables. LINEITEM is 85GB at source.</
 
 ## File Formats:
 
-The scipts (other than sf100.sh) provide an option to define the file format - e.g. ORC or Parquet.
+The scripts (other than sf100.sh) provide an option to define the file format - e.g. ORC or Parquet.
 This is defined in the CREATE TABLE docs below. Keep in mind, creating a table in the DELTA and ICEBERG schemas, will automatically create files in those respective formats.
 
 https://docs.starburst.io/latest/sql/create-table.html
