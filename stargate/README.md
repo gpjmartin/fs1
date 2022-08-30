@@ -13,7 +13,7 @@ The connector name will remain the same.</br>
 SSL and Impersonation added for awareness.
 
     connector.name=stargate
-    connection-url=jdbc:trino://remote-cluster.example.net:8443/hive
+    connection-url=jdbc:trino://remote-cluster.example.net:8080/hive
     connection-user=some_sep_user
     connection-password=some_password
     ssl.enabled=false
