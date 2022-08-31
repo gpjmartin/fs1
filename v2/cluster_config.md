@@ -21,30 +21,30 @@ hive.gcs.use-access-token=false </br>
 #materialized-views.storage-schema=views_cache_storage	</br>
 #materialized-views.allow-run-as-invoker=true </br>
 
-delta.properties:
+delta.properties: </br>
 
-connector.name=delta-lake
-hive.metastore.uri=thrift://10.23.192.15:9083
-delta.metadata.cache-ttl=30m
-hive.security=allow-all
-delta.hive-catalog-name=hive
-delta.enable-non-concurrent-writes=true
-#hive.non-managed-table-writes-enabled=true
-hive.metastore-refresh-interval=5m
-#redirection.config-source=SERVICE
-#cache-service.uri=http://192.168.0.2:8180
-
-
-iceberg.properties
-
-connector.name=iceberg
-hive.metastore.uri=thrift://10.23.192.15:9083
+connector.name=delta-lake </br>
+hive.metastore.uri=thrift://10.23.192.15:9083 </br>
+delta.metadata.cache-ttl=30m </br>
+hive.security=allow-all </br>
+delta.hive-catalog-name=hive </br>
+delta.enable-non-concurrent-writes=true </br>
+#hive.non-managed-table-writes-enabled=true </br>
+hive.metastore-refresh-interval=5m </br>
+#redirection.config-source=SERVICE </br>
+#cache-service.uri=http://192.168.0.2:8180 </br>
 
 
-bigquery.properties:
+iceberg.properties </br>
 
-connector.name=bigquery
-bigquery.project-id=$INPUT_YOUR_ID
+connector.name=iceberg </br>
+hive.metastore.uri=thrift://10.23.192.15:9083 </br>
+
+
+bigquery.properties: </br>
+
+connector.name=bigquery </br>
+bigquery.project-id=$INPUT_YOUR_ID </br>
 bigquery.views-enabled=true
 bigquery.project-prefix-for-schema.enabled=false
 bigquery.project-cache-ttl=30s
