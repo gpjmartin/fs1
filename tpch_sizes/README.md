@@ -1,4 +1,4 @@
-# SF1000 Scale Point
+# TPC-H SF1000 Scale Factor
 
 | Table      | Row Count   | Size          |
 | :---       |    :----:   |          ---: |
