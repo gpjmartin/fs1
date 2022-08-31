@@ -12,3 +12,7 @@
 | Region     | 5           | 0GB           |
 |            |             |               |
 | Total      |             | 1.2 TB        |
+
+
+SF100 - will be approx ~10% of the above. </br>
+SF10000 - will be ~10x of the above.
