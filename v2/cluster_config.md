@@ -13,12 +13,13 @@ hive.gcs.use-access-token=false </br>
 #hive.file-status-cache-size=1000000 </br>
 #hive.delta-lake-catalog-name=deltalake </br>
 #hive.security=starburst </br>
+hive.security=allow-all </br>
 #hive.non-managed-table-writes-enabled=true </br>
 #redirection.config-source=SERVICE </br>
 #cache-service.uri=http://192.168.0.2:8180 </br>
-#materialized-views.enabled=true </br>
-#materialized-views.namespace=materialized_views </br>
-#materialized-views.storage-schema=views_cache_storage	</br>
+materialized-views.enabled=true </br>
+materialized-views.namespace=materialized_views </br>
+materialized-views.storage-schema=views_cache_storage	</br>
 #materialized-views.allow-run-as-invoker=true </br>
 
 delta.properties: </br>
@@ -113,19 +114,19 @@ http-server.https.keystore.path=/etc/starburst/coordinator.pem </br>
 http-server.authentication.type=PASSWORD </br>
 http-server.authentication.allow-insecure-over-http=true </br>
 http-server.process-forwarded=true </br>
-#starburst.access-control.enabled=true </br>
-#starburst.access-control.authorized-users=starburst_service </br>
-#starburst.user=caching_service </br>
-#starburst.password=StarburstR0cks! </br>
-#starburst.jdbc-url=jdbc:trino://192.168.0.2:8080 </br>
+starburst.access-control.enabled=true </br>
+starburst.access-control.authorized-users=starburst_service </br>
+starburst.user=caching_service </br>
+starburst.password=StarburstR0cks! </br>
+starburst.jdbc-url=jdbc:trino://192.168.0.2:8080 </br>
 #rules.file=/etc/starburst/cache-rules.json </br>
 #rules.refresh-period=1m </br>
 #refresh-initial-delay=1m </br>
 #refresh-interval=2m </br>
-#service-database.user=postgres </br>
-#service-database.password=StarburstR0cks! </br>
-#service-database.jdbc-url=jdbc:postgresql://34.34.34.34:5432/binary_redirections </br>
-#starburst.jdbc-url=jdbc:trino://localhost:8443?SSL=true&SSLVerification=NONE </br>
+service-database.user=postgres </br>
+service-database.password=StarburstR0cks! </br>
+service-database.jdbc-url=jdbc:postgresql://34.34.34.34:5432/binary_redirections </br>
+starburst.jdbc-url=jdbc:trino://localhost:8443?SSL=true&SSLVerification=NONE </br>
 
 ../admin/worker </br>
 
