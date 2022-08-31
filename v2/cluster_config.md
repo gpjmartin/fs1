@@ -1,4 +1,4 @@
-# Catalog Files: …./admin/files/catalog
+Catalog Files: …./admin/files/catalog
 
 hive.properties:
 
@@ -45,105 +45,92 @@ bigquery.properties: </br>
 
 connector.name=bigquery </br>
 bigquery.project-id=$INPUT_YOUR_ID </br>
-bigquery.views-enabled=true
-bigquery.project-prefix-for-schema.enabled=false
-bigquery.project-cache-ttl=30s
+bigquery.views-enabled=true </br>
+bigquery.project-prefix-for-schema.enabled=false </br>
+bigquery.project-cache-ttl=30s </br>
 
-jmx.properties:
-connector.name=jmx
+jmx.properties: </br>
+connector.name=jmx </br>
 
-tpcds.properties:
-connector.name=tpcds
+tpcds.properties: </br>
+connector.name=tpcds </br>
 
-tpch.properties
-connector.name=tpch
+tpch.properties </br>
+connector.name=tpch </br>
 
-postgres.properties:
-connector.name=postgresql
-connection-url=jdbc:postgresql://34.34.34.34:5432/$INPUT_DB_NAME
-connection-user=postgres
-connection-password=$INPUT_PW_HERE
-
-
-
-Note: postgres just for example.
+postgres.properties: </br>
+connector.name=postgresql </br>
+connection-url=jdbc:postgresql://34.34.34.34:5432/$INPUT_DB_NAME </br>
+connection-user=postgres </br>
+connection-password=$INPUT_PW_HERE </br>
 
 
-Cluster Config files…../admin/coordinator/......and ../admin/worker:
 
-jvm.config.j2
+Note: postgres just for example. </br>
 
--server
--Xmx16G
--XX:InitialRAMPercentage=80
--XX:MaxRAMPercentage=80
--XX:G1HeapRegionSize=32M
--XX:+ExplicitGCInvokesConcurrent
--XX:+ExitOnOutOfMemoryError
--XX:+HeapDumpOnOutOfMemoryError
--XX:-OmitStackTraceInFastThrow
--XX:ReservedCodeCacheSize=512M
--XX:PerMethodRecompilationCutoff=10000
--XX:PerBytecodeRecompilationCutoff=10000
--Djdk.attach.allowAttachSelf=true
--Djdk.nio.maxCachedBufferSize=2000000
--XX:+UnlockDiagnosticVMOptions
--XX:+UseAESCTRIntrinsics
 
-log.properties:
-Io.trino=DEBUG
+Cluster Config files…../admin/coordinator/......and ../admin/worker: </br>
 
-../admin/coordinator
+jvm.config.j2 </br>
 
-# Add user-specific properties below
-internal-communication.shared-secret=$SHARED_SECRET
-query.max-memory=1PB
-query.max-memory-per-node=2867MB
-insights.persistence-enabled=true
-insights.metrics-persistence-enabled=true
-insights.jdbc.url=jdbc:postgresql://34.34.34.34:5432/$DB_NAME_HERE
-insights.jdbc.user=postgres
-insights.jdbc.password=$DB_NAME_HERE
-insights.authorized-users=starburst_service
-query.client.timeout=120m
-http-server.https.enabled=true
-http-server.https.port=8443
-http-server.https.keystore.path=/etc/starburst/coordinator.pem
-http-server.authentication.type=PASSWORD
-http-server.authentication.allow-insecure-over-http=true
-http-server.process-forwarded=true
-#starburst.access-control.enabled=true
-#starburst.access-control.authorized-users=starburst_service
-#starburst.user=caching_service
-#starburst.password=StarburstR0cks!
-#starburst.jdbc-url=jdbc:trino://192.168.0.2:8080
-#rules.file=/etc/starburst/cache-rules.json
-#rules.refresh-period=1m
-#refresh-initial-delay=1m
-#refresh-interval=2m
-#service-database.user=postgres
-#service-database.password=StarburstR0cks!
-#service-database.jdbc-url=jdbc:postgresql://34.34.34.34:5432/binary_redirections
-#starburst.jdbc-url=jdbc:trino://localhost:8443?SSL=true&SSLVerification=NONE
+-server </br>
+-Xmx16G </br>
+-XX:InitialRAMPercentage=80 </br>
+-XX:MaxRAMPercentage=80 </br>
+-XX:G1HeapRegionSize=32M </br>
+-XX:+ExplicitGCInvokesConcurrent </br>
+-XX:+ExitOnOutOfMemoryError </br>
+-XX:+HeapDumpOnOutOfMemoryError </br>
+-XX:-OmitStackTraceInFastThrow </br>
+-XX:ReservedCodeCacheSize=512M </br>
+-XX:PerMethodRecompilationCutoff=10000 </br>
+-XX:PerBytecodeRecompilationCutoff=10000 </br>
+-Djdk.attach.allowAttachSelf=true </br>
+-Djdk.nio.maxCachedBufferSize=2000000 </br>
+-XX:+UnlockDiagnosticVMOptions </br>
+-XX:+UseAESCTRIntrinsics </br>
 
-../admin/worker
+log.properties: </br>
+Io.trino=DEBUG </br>
 
-config.properties.j2
+../admin/coordinator</br>
 
-internal-communication.shared-secret=$SHARED_SECRET
-query.max-memory=1PB
-query.max-memory-per-node=2867MB
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
+Add user-specific properties below </br>
+
+internal-communication.shared-secret=$SHARED_SECRET </br>
+query.max-memory=1PB </br>
+query.max-memory-per-node=2867MB </br>
+insights.persistence-enabled=true </br>
+insights.metrics-persistence-enabled=true </br>
+insights.jdbc.url=jdbc:postgresql://34.34.34.34:5432/$DB_NAME_HERE </br>
+insights.jdbc.user=postgres </br>
+insights.jdbc.password=$DB_NAME_HERE </br>
+insights.authorized-users=starburst_service </br>
+query.client.timeout=120m </br>
+http-server.https.enabled=true </br>
+http-server.https.port=8443 </br>
+http-server.https.keystore.path=/etc/starburst/coordinator.pem </br>
+http-server.authentication.type=PASSWORD </br>
+http-server.authentication.allow-insecure-over-http=true </br>
+http-server.process-forwarded=true </br>
+#starburst.access-control.enabled=true </br>
+#starburst.access-control.authorized-users=starburst_service </br>
+#starburst.user=caching_service </br>
+#starburst.password=StarburstR0cks! </br>
+#starburst.jdbc-url=jdbc:trino://192.168.0.2:8080 </br>
+#rules.file=/etc/starburst/cache-rules.json </br>
+#rules.refresh-period=1m </br>
+#refresh-initial-delay=1m </br>
+#refresh-interval=2m </br>
+#service-database.user=postgres </br>
+#service-database.password=StarburstR0cks! </br>
+#service-database.jdbc-url=jdbc:postgresql://34.34.34.34:5432/binary_redirections </br>
+#starburst.jdbc-url=jdbc:trino://localhost:8443?SSL=true&SSLVerification=NONE </br>
+
+../admin/worker </br>
+
+config.properties.j2 </br>
+
+internal-communication.shared-secret=$SHARED_SECRET </br>
+query.max-memory=1PB </br>
+query.max-memory-per-node=2867MB </br>
