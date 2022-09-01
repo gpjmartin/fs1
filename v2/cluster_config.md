@@ -70,7 +70,7 @@ connection-password=$INPUT_PW_HERE </br>
 Note: postgres just for example. </br>
 
 
-Cluster Config files…../admin/coordinator/......and ../admin/worker: </br>
+Cluster Config files…../admin/files/coordinator/......and ../admin/files/worker: </br>
 
 jvm.config.j2 </br>
 
@@ -94,7 +94,7 @@ jvm.config.j2 </br>
 log.properties: </br>
 Io.trino=DEBUG </br>
 
-../admin/coordinator</br>
+../admin/files/coordinator</br>
 
 Add user-specific properties below </br>
 
@@ -130,7 +130,7 @@ starburst.jdbc-url=jdbc:trino://localhost:8443?SSL=true&SSLVerification=NONE </b
 starburst.user=cache-service
 
 
-../admin/worker </br>
+../admin/files/worker </br>
 
 config.properties.j2 </br>
 
