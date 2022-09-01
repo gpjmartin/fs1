@@ -127,6 +127,8 @@ service-database.user=postgres </br>
 service-database.password=StarburstR0cks! </br>
 service-database.jdbc-url=jdbc:postgresql://34.34.34.34:5432/binary_redirections </br>
 starburst.jdbc-url=jdbc:trino://localhost:8443?SSL=true&SSLVerification=NONE </br>
+starburst.user=cache-service
+
 
 ../admin/worker </br>
 
