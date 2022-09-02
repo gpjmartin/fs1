@@ -124,7 +124,7 @@ starburst.jdbc-url=jdbc:trino://192.168.0.2:8080 </br>
 #refresh-initial-delay=1m </br>
 #refresh-interval=2m </br>
 service-database.user=postgres </br>
-service-database.password=StarburstR0cks! </br>
+service-database.password=$PASSWORD </br>
 service-database.jdbc-url=jdbc:postgresql://34.34.34.34:5432/binary_redirections </br>
 starburst.jdbc-url=jdbc:trino://localhost:8443?SSL=true&SSLVerification=NONE </br>
 starburst.user=cache-service
