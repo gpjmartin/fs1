@@ -10,7 +10,7 @@ sudo dnf install httpd-tools -y
 
 sudo htpasswd -B -C 10 password.db starburst_service
 
-Set the passwrod at the prompt.
+Set the password at the prompt.
 
 Repeat for caching_service
 
