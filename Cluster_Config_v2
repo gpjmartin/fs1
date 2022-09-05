@@ -48,6 +48,8 @@ bigquery.project-id=$INPUT_YOUR_ID
 bigquery.views-enabled=true
 bigquery.project-prefix-for-schema.enabled=false
 bigquery.project-cache-ttl=30s
+bigquery.parallelism=64
+#bigquery.query-results-cache.enabled=true
 
 jmx.properties:
 connector.name=jmx
