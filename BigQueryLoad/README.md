@@ -16,3 +16,6 @@ CREATE OR REPLACE TABLE `<project>.<schema>.lineitem`</br>
  PARTITION BY date_trunc(shipdate,month)</br>
  AS</br>
  SELECT * FROM `<project>.<schema>.lineitem2` (edited) </br>
+ 
+ The same can be used for the Order table. </br> 
+ The Field - "orderdate' can be used instead of "shipdate" above.
