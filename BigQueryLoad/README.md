@@ -1,4 +1,4 @@
-# You can use the syntax below to create Partitions on the Google Big Query Tables.
+### You can use the syntax below to create Partitions on the Google Big Query Tables.
 
 CREATE OR REPLACE TABLE `<project>.<schema>.lineitem2` </br>
  PARTITION BY date_trunc(shipdate,month) </br>
