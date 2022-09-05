@@ -5,7 +5,8 @@ rpm -e zulu11.58.23-ca-jdk11.0.16.1-linux.x86_64.rpm
 
 Install Java 17 on ALL nodes, for example:
 
-sudo curl -O https://cdn.azul.com/zulu/bin/zulu17.36.13-ca-jre17.0.4-linux.x86_64.rpm
+sudo curl -O https://cdn.azul.com/zulu/bin/zulu17.36.13-ca-jre17.0.4-linux.x86_64.rpm </br>
+
 sudo rpm -i zulu17.36.13-ca-jre17.0.4-linux.x86_64.rpm
 
 Confirm the correct version of java via 'java --version'
@@ -18,10 +19,7 @@ version: 393-e.1
 
 Change the rpm to the link below:
 
-# Use `installer_url` to avoid uploading the installer file to each host.
-# You can only use one installation method. Comment out `installer_file` when enabling `installer_url`.
-# installer_url: "https://s3.us-east-2.amazonaws.com/software.starburstdata.net/380e/380-e.3/starburst-enterprise-380-e.3.tar.gz"
-#installer_url: "https://s3.us-east-2.amazonaws.com/software.starburstdata.net/380e/380-e.3/starburst-enterprise-380-e.3.rpm"
+\# Use `installer_url` to avoid uploading the installer file to each host. </br>
 installer_url: "https://s3.us-east-2.amazonaws.com/software.starburstdata.net/393e/393-e.1/starburst-enterprise-393-e.1.rpm"
 
 
