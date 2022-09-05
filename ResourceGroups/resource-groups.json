@@ -1,0 +1,17 @@
+{
+"rootGroups": [
+{
+"name": "all",
+"maxQueued": 1000,
+"softMemoryLimit": "80%",
+"hardConcurrencyLimit": 50,
+"jmxExport": true
+}
+],
+"selectors": [
+{
+"group": "all"
+}
+],
+"cpuQuotaPeriod": "1h"
+}
