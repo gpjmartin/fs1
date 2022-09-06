@@ -7,7 +7,7 @@ Update the Cluster Config with the cache service details
     service-database.jdbc-url=jdbc:postgresql://<postgre-db-hostname>:5432/cache_service 
         
     starburst.user=cache-service 
-    starburst.jdbc-url=jdbc:trino://coordinator:8080 
+    starburst.jdbc-url=jdbc:trino://192.168.0.2:8080 
   
     http-server.http.port=8180
 
