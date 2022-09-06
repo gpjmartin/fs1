@@ -25,10 +25,21 @@ Step 2: Hive Config
 In the above example, you need to create the schemas - mv_namespace and mv_storage. </br>
 The mv_storage is where the physical Materialized Views will be persisted in Hive.
 
-Step 3: Create Materialized Views
+Step 3: Create Materialized View's Schemas
 
-CREATE SCHEMA hiove.mf_mv_storage
+CREATE SCHEMA hive.mf_mv_storage
 WITH (location = 'gs://gcs-bucket/mv_storage/')
+
+Step 4: Create a Materialized View
+
+CREATE OR REPLACE MATERIALIZED VIEW hive.test.test_mat_view
+WITH (
+     max_import_duration = '1m'
+     refresh_interval = '5m'
+     grace_period = '10m'
+     )
+AS
+SELECT * FROM tpch.tiny.lineitem
 
 
 
