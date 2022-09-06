@@ -41,6 +41,8 @@ WITH (
 AS
 SELECT * FROM tpch.tiny.lineitem
 
+REFRESH MATERIALIZED VIEW hive.test.test_mat_view
+
 
 
 
