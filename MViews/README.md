@@ -1,4 +1,5 @@
-Step 1: Download the Cache tarball file:
+Step 1: Download and unxip the Cache tarball file: </br>
+
 https://s3.us-east-2.amazonaws.com/software.starburstdata.net/380e/380-e.3/starburst-cache-service-380-e.3.tar.gz
 
 
