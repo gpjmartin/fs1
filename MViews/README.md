@@ -1,4 +1,8 @@
-Step 1: Cache Service
+Step 1: Download the Cache tarball file:
+https://s3.us-east-2.amazonaws.com/software.starburstdata.net/380e/380-e.3/starburst-cache-service-380-e.3.tar.gz
+
+
+Step 2: Cache Service
 
 Update the Cluster Config with the cache service details
 
@@ -13,7 +17,7 @@ Update the Cluster Config with the cache service details
 
 After re-cycling the cluster, the new schemas under the cache_service database should appear.
    
-Step 2: Hive Config
+Step 3: Hive Config
 
     connector.name=hive
     ...
@@ -25,12 +29,12 @@ Step 2: Hive Config
 In the above example, you need to create the schemas - mv_namespace and mv_storage. </br>
 The mv_storage is where the physical Materialized Views will be persisted in Hive.
 
-Step 3: Create Materialized View's Schemas
+Step 4: Create Materialized View's Schemas
 
 CREATE SCHEMA hive.mf_mv_storage
 WITH (location = 'gs://gcs-bucket/mv_storage/')
 
-Step 4: Create a Materialized View
+Step 5: Create a Materialized View
 
 CREATE OR REPLACE MATERIALIZED VIEW hive.test.test_mat_view
 WITH (
