@@ -83,7 +83,7 @@ Changes to the rules.json are effective immediately, and don't require the clust
 
 Using a non-admin user, test the row-level access:</br>
 
-select * from hive.gmtpchtiny.user1 
+      select * from hive.gmtpchtiny.user1 
 
 Should return only the values for the logged in user (assuming the "user" column contains that value).</br>
 
