@@ -1,7 +1,7 @@
 {
   "tables": [
     {
-      "user": "(starburst_service|twain)",
+      "user": "(starburst_service|admin)",
       "privileges": ["SELECT", "INSERT", "DELETE", "UPDATE", "OWNERSHIP"]
     },
     {
