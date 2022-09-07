@@ -33,7 +33,11 @@ But not:</br>
 
 Any non-admin whom tries to access "acctbal" column will see the values masked.</br>
 
-3. Row Level Access
+3. Row Level Access - defined condition</br>
+
+Only the rows with the values of nationkey=1 will be returned </br>
+
+4. Row Level Access - user based
 
 Run the following SQL to create a Table (in a catalog of your choice):</br>
 
