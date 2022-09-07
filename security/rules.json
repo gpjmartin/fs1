@@ -1,0 +1,39 @@
+{
+  "tables": [
+    {
+      "user": "(starburst_service|twain)",
+      "privileges": ["SELECT", "INSERT", "DELETE", "UPDATE", "OWNERSHIP"]
+    },
+    {
+      "user": "banned_user",
+      "privileges": []
+    },
+    {
+      "catalog": "hive",
+      "schema": "gmtpchtiny",
+      "table": "uuser1",
+      "privileges": ["SELECT"],
+      "filter": "user = current_user",
+      "filter_environment": {
+        "user": "system_user"
+      }
+    },
+    {
+      "catalog": "tpch",
+      "schema": "tiny",
+      "table": "customer",
+      "privileges": ["SELECT"],
+      "filter": "nationkey = 1",
+      "columns" : [
+         {
+            "name": "address",
+            "allow": false
+         },
+         {
+            "name": "acctbal",
+            "mask": "000000000"
+         }
+      ]
+    }
+  ]
+}
