@@ -11,7 +11,6 @@ Step 2: Add a rules.json
 Take the rules.json file provided in this folder and copy it to the ../extra/etc folder</br>
 
 
-
 Step 3: Edit the rules.json
 
 The structure of the rules.json - add in the admins to the top level privileges (e.g. starburst_service, etc.).</br>
@@ -26,11 +25,11 @@ The table "tpch"."tiny"."customer" will not provide access to a non-admin user f
 
 For example, the below should have access:</br>
 
-SELECT custkey,name,nationkey,mktsegment,acctbal,comment FROM "tpch"."tiny"."customer" LIMIT 10;</br>
+      SELECT custkey,name,nationkey,mktsegment,acctbal,comment FROM "tpch"."tiny"."customer" LIMIT 10;</br>
 
 But not:</br>
 
-SELECT * FROM "tpch"."tiny"."customer" LIMIT 10;</br>
+      SELECT * FROM "tpch"."tiny"."customer" LIMIT 10;</br>
 
 2. Column Masking
 
