@@ -2,10 +2,11 @@ Step 1: Download and unxip the Cache tarball file: </br>
 
 https://s3.us-east-2.amazonaws.com/software.starburstdata.net/380e/380-e.3/starburst-cache-service-380-e.3.tar.gz
 
+Download and untar. Move to /opt.
 
 Step 2: Cache Service
 
-Update the Cluster Config with the cache service details. 
+Update the Cluster Config with the cache service details. </br>
 Create a file in ../extra/etc called cache.properties and add the below:
 
     service-database.user=postgres 
@@ -17,6 +18,7 @@ Create a file in ../extra/etc called cache.properties and add the below:
   
     http-server.http.port=8180
 
+Push the configs out using ansible. </br>
 After re-cycling the cluster, the new schemas under the cache_service database should appear.
    
 Step 3: Hive Config
