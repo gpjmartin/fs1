@@ -11,7 +11,7 @@
     {
       "catalog": "hive",
       "schema": "gmtpchtiny",
-      "table": "uuser1",
+      "table": "user1",
       "privileges": ["SELECT"],
       "filter": "user = current_user",
       "filter_environment": {
