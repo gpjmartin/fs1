@@ -5,7 +5,8 @@ https://s3.us-east-2.amazonaws.com/software.starburstdata.net/380e/380-e.3/starb
 
 Step 2: Cache Service
 
-Update the Cluster Config with the cache service details
+Update the Cluster Config with the cache service details. 
+Create a file in ../extra/etc called cache.properties and add the below:
 
     service-database.user=postgres 
     service-database.password=PASSWORD_HERE 
