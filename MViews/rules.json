@@ -1,0 +1,18 @@
+{
+  "catalogs": [
+    {
+      "user": "(starburst_service|cache-service)",
+      "catalog": "(tpch|tpcds|system|bootcamp|deltalake|glue|iceberg|jmx|mysql|query_logger|sql)",
+      "allow": "all"
+    },
+    {
+      "user": "alice",
+      "catalog": "(system|tpch)",
+      "allow": "all"
+    },
+    {
+      "catalog": "(tpcds|system)",
+      "allow": "none"
+    }
+  ]
+}
