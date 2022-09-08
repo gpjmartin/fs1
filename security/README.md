@@ -86,7 +86,7 @@ Using a non-admin user, test the row-level access:</br>
       select * from hive.gmtpchtiny.user1 
 
 Should return only the values for the logged in user (assuming the "user" column contains that value).</br>
-In the example above - user 'grahaam' will only see rows where user='graham'.
+In the example above - user 'graham' will only see rows where user='graham'.</br>
 The same is true for user 'martin' - they will only see rows where user = 'martin'
 
 
