@@ -23,11 +23,11 @@ The table "tpch"."tiny"."customer" will not provide access to a non-admin user f
 
 For example, the below should have access:</br>
 
-      SELECT custkey,name,nationkey,mktsegment,acctbal,comment FROM "tpch"."tiny"."customer" LIMIT 10;</br>
+      SELECT custkey,name,nationkey,mktsegment,acctbal,comment FROM "tpch"."tiny"."customer" LIMIT 10;
 
 But not:</br>
 
-      SELECT * FROM "tpch"."tiny"."customer" LIMIT 10;</br>
+      SELECT * FROM "tpch"."tiny"."customer" LIMIT 10;
 
 2. Column Masking
 
