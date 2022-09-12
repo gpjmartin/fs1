@@ -40,14 +40,14 @@ WITH (location = 'gs://gcs-bucket/mv_storage/')
 
 Step 5: Create a Materialized View
 
-CREATE OR REPLACE MATERIALIZED VIEW hive.test.test_mat_view
-WITH (
-     max_import_duration = '1m'
-     refresh_interval = '5m'
-     grace_period = '10m'
-     )
-AS
-SELECT * FROM tpch.tiny.lineitem
+    CREATE OR REPLACE MATERIALIZED VIEW hive.test.test_mat_view
+    WITH (
+         max_import_duration = '1m'
+         refresh_interval = '5m'
+         grace_period = '10m'
+         )
+    AS
+    SELECT * FROM tpch.tiny.lineitem
 
 REFRESH MATERIALIZED VIEW hive.test.test_mat_view
 
