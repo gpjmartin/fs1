@@ -32,6 +32,10 @@ But not:</br>
 2. Column Masking
 
 Any non-admin whom tries to access "acctbal" column will see the values masked.</br>
+To test the impact masking will have on a Query - it would be best to use a table on Hive or GBQ. </br>
+In the rules.json file - change the table to a table used in the TPC-H Query tests. </br>
+The masked row needs to be returned in the SQL Statement.</br>
+
 
 3. Row Level Access - defined condition</br>
 
