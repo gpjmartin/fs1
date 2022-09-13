@@ -118,4 +118,9 @@ An example of running the Q21 - SF1000 Materialized View: </br>
     LIMIT 
     100
 
+Step 8:
+
+Note: Check you have the below set, so older versions of Materialized Views can be spooled out.
+hive.security=all
+
 
