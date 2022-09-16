@@ -50,6 +50,8 @@ bigquery.project-prefix-for-schema.enabled=false
 bigquery.project-cache-ttl=30s
 bigquery.parallelism=64
 #bigquery.query-results-cache.enabled=true
+#Set the below if you are not using Cloud based IAM, for example if you working with an on-premise cluster.
+bigquery.credentials-file=/etc/starburst/gcs_keyfile.json
 
 jmx.properties:
 connector.name=jmx
