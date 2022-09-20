@@ -27,6 +27,6 @@ Run the install playbook:
 
 ansible-playbook playbooks/install.yml
 
-The installed needs to complete with no errors.
+The installer needs to complete with no errors.
 
 After completion, push the configs out to the nodes, and restart.
