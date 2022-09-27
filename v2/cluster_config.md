@@ -42,6 +42,8 @@ iceberg.properties </br>
 
 connector.name=iceberg </br>
 hive.metastore.uri=thrift://10.23.192.15:9083 </br>
+hive.gcs.json-key-file-path=/etc/starburst/gcs_keyfile.json </br>
+hive.gcs.use-access-token=false </br>
 
 
 bigquery.properties: </br>
