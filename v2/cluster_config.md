@@ -45,10 +45,13 @@ hive.metastore.uri=thrift://10.23.192.15:9083 </br>
 bigquery.properties: </br>
 
 connector.name=bigquery </br>
-bigquery.project-id=$INPUT_YOUR_ID </br>
+bigquery.project-id=$YOUR_PROJECT_HERE </br>
 bigquery.views-enabled=true </br>
 bigquery.project-prefix-for-schema.enabled=false </br>
-bigquery.project-cache-ttl=30s </br>
+bigquery.project-cache-ttl=30m </br>
+bigquery.parallelism=12 </br>
+#bigquery.query-results-cache.enabled=true </br>
+bigquery.credentials-file=/etc/starburst/gcs_keyfile.json </br>
 
 jmx.properties: </br>
 connector.name=jmx </br>
