@@ -34,6 +34,8 @@ delta.enable-non-concurrent-writes=true </br>
 hive.metastore-refresh-interval=5m </br>
 #redirection.config-source=SERVICE </br>
 #cache-service.uri=http://192.168.0.2:8180 </br>
+hive.gcs.json-key-file-path=/etc/starburst/gcs_keyfile.json </br>
+hive.gcs.use-access-token=false </br>
 
 
 iceberg.properties </br>
