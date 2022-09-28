@@ -73,7 +73,7 @@ connection-password=$INPUT_PW_HERE
 Note: postgres just for example.
 
 
-Cluster Config files…../admin/coordinator/…and ../admin/worker:
+Cluster Config files…../admin/files/coordinator/…and ../admin/files/worker:
 
 jvm.config.j2
 
@@ -97,7 +97,9 @@ jvm.config.j2
 log.properties:
 Io.trino=DEBUG
 
-../admin/coordinator
+../admin/files/coordinator
+
+config.properties.j2
 
 # Add user-specific properties below
 internal-communication.shared-secret=$SHARED_SECRET
@@ -130,7 +132,7 @@ http-server.process-forwarded=true
 #service-database.jdbc-url=jdbc:postgresql://34.34.34.34:5432/binary_redirections
 #starburst.jdbc-url=jdbc:trino://localhost:8443?SSL=true&SSLVerification=NONE
 
-../admin/worker
+../admin/files/worker
 
 config.properties.j2
 
