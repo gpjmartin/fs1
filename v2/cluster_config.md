@@ -103,6 +103,8 @@ Io.trino=DEBUG </br>
 
 ../admin/files/coordinator</br>
 
+config.properties.j2 </br>
+
 Add user-specific properties below </br>
 
 internal-communication.shared-secret=$SHARED_SECRET </br>
