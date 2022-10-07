@@ -52,10 +52,12 @@ connector.name=bigquery </br>
 bigquery.project-id=$YOUR_PROJECT_HERE </br>
 bigquery.views-enabled=true </br>
 bigquery.project-prefix-for-schema.enabled=false </br>
-bigquery.project-cache-ttl=30m </br>
+bigquery.project-cache-ttl=0 </br>
 bigquery.parallelism=12 </br>
 #bigquery.query-results-cache.enabled=true </br>
 bigquery.credentials-file=/etc/starburst/gcs_keyfile.json </br>
+bigquery.case-insensitive-name-matching=true </br>
+
 
 jmx.properties: </br>
 connector.name=jmx </br>
