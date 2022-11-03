@@ -43,7 +43,7 @@ Step 5: Create a Materialized View
     CREATE OR REPLACE MATERIALIZED VIEW hive.test.test_mat_view
     WITH (
          max_import_duration = '1m',
-         refresh_interval = '5m',
+         refresh_interval = '600m',
          grace_period = '10m'
          )
     AS
