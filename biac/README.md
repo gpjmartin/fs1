@@ -1,4 +1,4 @@
-#Setting up BIAC (Built-in Access Control)
+# Setting up BIAC (Built-in Access Control)
 
 Changes to config.properties:
 
