@@ -8,5 +8,5 @@ Changes to config.properties:
     starburst.access-control.audit.enabled=true
  
 Comment out the below if it is set:</br>
-    \#insights.authorized-users=starburst_service
+        \#insights.authorized-users=starburst_service
 
