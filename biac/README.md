@@ -7,6 +7,6 @@ Changes to config.properties:
     starburst.access-control.authorized-groups=wizards,knights
     starburst.access-control.audit.enabled=true
  
-Comment out the below if it is set:
+Comment out the below if it is set:</br>
     \#insights.authorized-users=starburst_service
 
