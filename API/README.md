@@ -4,9 +4,12 @@ Trino API Documentation:
 https://trino.io/docs/current/develop/client-protocol.html </br>
 
 Setting up in Postman:</br>
+
 The {{host}} below, is the FQDN hostname.</br>
+
 The {{{sep_dp_auth}} variable below, is the base64 codification of: "$USER_ID:$PASSWORD" appended to "Basic $base64_output"</br>
-Please read the below for some more details:</br>
+
+Please read the below for some more details on the Authorization string:</br>
 
 https://gpjmartin.wordpress.com/2022/11/29/working-with-the-starburst-enterprise-data-products-rest-api-part-1/
 
@@ -16,3 +19,11 @@ https://gpjmartin.wordpress.com/2022/11/29/working-with-the-starburst-enterprise
 The SQL payload can be input into the raw section:</br> 
 
 <img width="931" alt="Screenshot 2023-03-08 at 16 42 22" src="https://user-images.githubusercontent.com/21335020/223775324-5a81795e-5c44-4cbf-97a6-0d2501b9f3c3.png">
+
+After Executing the POST statement - the result is not returned straight away.</br>
+
+You need to click on the 'nextUri' link, and run that as-is. Postman will run a GET against this URI. </br>
+
+Each time the Response contains a 'nextUri' link, you need to click to receive the Query Response. </br>
+
+The Result is returned in the final link, and there is no other 'nextUri' links in the response. </br>
