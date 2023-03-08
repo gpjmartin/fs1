@@ -4,9 +4,9 @@ Trino API Documentation:
 https://trino.io/docs/current/develop/client-protocol.html </br>
 
 Setting up in Postman:</br>
-The {{host}} below, is the FQDN hostname.
-The {{{sep_dp_auth}} variable below, is the base64 codification of: "$USER_ID:$PASSWORD" appended to "Basic $base64_output"
-Please read the below for some more details:
+The {{host}} below, is the FQDN hostname.</br>
+The {{{sep_dp_auth}} variable below, is the base64 codification of: "$USER_ID:$PASSWORD" appended to "Basic $base64_output"</br>
+Please read the below for some more details:</br>
 
 https://gpjmartin.wordpress.com/2022/11/29/working-with-the-starburst-enterprise-data-products-rest-api-part-1/
 
