@@ -1,4 +1,12 @@
-        
+
+The queries below use either the "tiny" or the "sf100" schema. </br>
+
+You can change the schema to change the rows processed, and the query response time.
+
+For row counts of the schemas, please see below. Divide of Mulitple by 10 up moving up or down the Scale Factors: </br>
+
+https://github.com/gpjmartin/fs1/tree/main/tpch_sizes
+
     select
       c.name,
       c.nationkey,
