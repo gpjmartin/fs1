@@ -55,7 +55,11 @@ In this test, the entire result set of the SQL was transmitted (~1GB) from Starb
 
 There were no errors in the Starburst UI. </br>
 
-In summary - certain client tools such as JMeter, are not designed to handle large data volumes in results sets. This can cause an error in the Starburst UI - though that is mis-leading as the SQL was run successfully in Starburst. The issue is that the client was unable to handle the data volumes. Testin in JMeter is better served using SQL that returns low to medium data volumes. The TPC-H Queries can be used as examples. </br>
+![Screenshot 2023-04-20 at 16 08 28](https://user-images.githubusercontent.com/21335020/233408853-38fc3992-f6d0-480c-9f04-7c6fa8c1473a.png)
+
+
+In summary - certain client tools such as JMeter, are not designed to handle large data volumes in results sets. This can cause an error in the Starburst UI - though that is mis-leading as the SQL was run successfully in Starburst. The issue is that the client was unable to handle the data volumes.</br> 
+Testing in JMeter is better served using SQL that returns low to medium data volumes. The TPC-H Queries can be used as examples. </br>
 Other client tools - BI Tools in particular, are better designed to handle large result sets from SQL Queries.
 
 
