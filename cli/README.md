@@ -12,6 +12,8 @@ When this occurs - the following can be observed (OutOfMemoryError: Java heap sp
 
 I the Starburst UI - Query Overview screen, the SQL will show as having been successfully executed - but with a display 'Query results were truncated' message. </br>
 
+![Screenshot 2023-04-20 at 12 42 40](https://user-images.githubusercontent.com/21335020/233405203-eab83247-c57f-4800-a554-500c65ddf2af.png)
+
 
 ![Screenshot 2023-04-20 at 12 46 29](https://user-images.githubusercontent.com/21335020/233397151-9605480b-45ad-4dea-8b27-fd922ec26502.png)
 
@@ -37,14 +39,14 @@ Comment: would advise to change the 'sf1' schema for the 'tiny' schema as the vo
 
 Create a simple batch file to run the SQL. Iterations can be performed as required. Change the directory to match where the trino CLI is installed.</br> 
 
-#!/bin/bash
-ITERATIONS=1
-for ((x = 1 ; x < $ITERATIONS +1 ; x++)); 
-do
-#nohup /install_directory/trino --server http://10.1.1.10:8080 --user=starburst_service -f sql.txt --output-format=null  --progress &
-nohup /install_directory/trino --server http://10.1.1.10:8080 --user=starburst_service -f sql.txt --output-format=csv  --progress &
-sleep 10
-done
+    #!/bin/bash
+    ITERATIONS=1
+    for ((x = 1 ; x < $ITERATIONS +1 ; x++)); 
+    do
+    #nohup /install_directory/trino --server http://10.1.1.10:8080 --user=starburst_service -f sql.txt --output-format=null  --progress &
+    nohup /install_directory/trino --server http://10.1.1.10:8080 --user=starburst_service -f sql.txt --output-format=csv  --progress &
+    sleep 10
+    done
 
 Comment - if you want to test just the functionality - you can set the output to 'null'. </br>
 If you require to test the entire result-set passed to the client, set the output to a format, such as 'csv'. </br>
