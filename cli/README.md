@@ -19,7 +19,7 @@ In the Starburst UI - Query Overview screen, the SQL will show as having been su
 
 The SQL has been successful - the transmission of the full results set to JMeter has failed - due to the JMeter client having the above Java heap space error. The error is the result of the volume of records being returned. In this test the SQL being run is: </br>
 
-  select * from tpch.sf1.lineitem 
+    SELECT * FROM tpch.sf1.lineitem 
 
 This table has over 6m rows, and approx 874MB in size. In general this is not a requirement to return such data volumes to a Test Tool like JMeter.</br>
 
@@ -35,7 +35,7 @@ To test SQL, create a file - e.g. sql.txt and add in the required SQL you want t
 
 Comment: would advise to change the 'sf1' schema to the 'tiny' schema as the volumes are large (~ 1GB will get written for the below SQL): </br>
 
-  SELECT * FROM tpch.sf1.lineitem;
+    SELECT * FROM tpch.sf1.lineitem;
 
 Create a simple batch file to run the SQL. Iterations can be performed as required. Change the directory to match where the trino CLI is installed.</br> 
 
