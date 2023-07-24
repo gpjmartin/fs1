@@ -12,5 +12,5 @@ do
 #/Users/grahammartin/Documents/cli/422/trino --server https://xxx.trino.galaxy.starburst.io:443 --user=gm@starburst.io/accountadmin --password -f sql.txt --output-format=null  --progress
 #/Users/grahammartin/Documents/cli/422/trino --server https://xxx.trino.galaxy.starburst.io:443 --user=gm@starburst.io/accountadmin --password --output-format=csv --execute 'SELECT * FROM "gms3"."land"."page_views" T where T."country" IS NOT NULL'
 #/Users/grahammartin/Documents/cli/422/trino --server https://xxx.trino.galaxy.starburst.io:443 --user=gm@starburst.io/accountadmin --password --output-format=csv --execute 'SELECT ds FROM "gms3"."land"."page_views" T where T."country" = '\'ESP\'' '
-/Users/grahammartin/Documents/cli/422/trino --server https://xxx.trino.galaxy.starburst.io:443 --user=graham.martin@starburst.io/accountadmin --password --ignore-errors --output-format=csv  -f sql_part.txt 
+/Users/grahammartin/Documents/cli/422/trino --server https://xxx.trino.galaxy.starburst.io:443 --user=gm@starburst.io/accountadmin --password --ignore-errors --output-format=csv  -f sql_part.txt 
 done 
