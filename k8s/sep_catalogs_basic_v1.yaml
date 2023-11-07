@@ -1,0 +1,22 @@
+catalogs:
+  tpcds: |
+    connector.name=tpcds  
+  tpch: |
+    connector.name=tpch
+  jmx: |
+    connector.name=jmx
+  # mysql: |
+  #   connector.name=mysql
+  #   connection-url=jdbc:mysql://gm-mysql.cupdzjlj8tpf.eu-west-2.rds.amazonaws.com:3306
+  #   connection-user=admin
+  #   connection-password=StarburstR0cks!
+  #   join-pushdown.strategy=EAGER
+  #   metadata.cache-ttl=30m
+  #   metadata.cache-missing=true
+  #   #redirection.config-source=SERVICE
+  #   #cache-service.uri=http://coordinator:8180
+ # query_logger: |
+ #   connector.name=mysql
+ #   connection-url=dbc:mysql://gm-mysql.cupdzjlj8tpf.eu-west-2.rds.amazonaws.com:3306/query_logger
+ #   connection-user=admin  
+ #   connection-password=Password123
