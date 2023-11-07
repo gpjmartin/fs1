@@ -29,38 +29,18 @@ coordinator:
   #           values: 
   #           - sep
 
-# The tollerance in this YAML is specifically for Azure so it could be removed or commented out
-#    for other clouds. However, it also won't hurt to leave since it is just saying to allow somethign
-#    if a taint exists and when it doesn't the tollerance does nothing.
-  tolerations:
-    - key: "kubernetes.azure.com/scalesetpriority"
-      operator: "Equal"
-      value: "spot"
-      effect: "NoSchedule"
-
   etcFiles:
     properties:
       log.properties: |
         io.trino=DEBUG
   
-# If you want the LB to have an internal IP and not a public facing one remove the comment below for the
-#  annoticatios line and the line for your cloud.
-#    annotations: 
-#      service.beta.kubernetes.io/aws-load-balancer-internal: "true"
-#      service.beta.kubernetes.io/azure-load-balancer-internal: "true"
-#      networking.gke.io/load-balancer-type: "Internal"
 expose:
   type: "ingress"
   ingress:
     annotations:
       cert-manager.io/cluster-issuer: acme
       kubernetes.io/ingress.class: nginx
-    # The host name below must be unique in the DNS domain you are entering it into.
-    # If you are running through these labs in the Partner AWS account then comment out the line under Enablement Account and remove
-    # the comment for Partner Account.
-    # Enablement Account
-    #host: sbe-gmuk-lab01.enablement.starburstdata.net
-    host: gmuksc-sep.enablement.starburstdata.net
+    host: your_host_here.starburstdata.net
     ingressName: "starburst-ingress"
     serviceName: "starburst"
     servicePort: 8080
@@ -87,8 +67,6 @@ worker:
       cpu: 2
     limits:
       memory: "6Gi"
-
-  # This affinity will ensure the coordinator and worker are deployed in the sep node group.
 
 userDatabase:
   enabled: true
