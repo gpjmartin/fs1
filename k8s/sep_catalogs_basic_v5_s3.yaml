@@ -1,0 +1,77 @@
+catalogs:
+  tpcds: |
+    connector.name=tpcds  
+  tpch: |
+    connector.name=tpch
+  jmx: |
+    connector.name=jmx
+  postgres: |
+    connector.name=postgresql
+    connection-url=jdbc:postgresql://graham-martin-bootcamp-postgresql.cupdzjlj8tpf.eu-west-2.rds.amazonaws.com:5432/stsfourtwseven
+    connection-user=postgres
+    connection-password=StarburstR0cks!
+  sqlserver_sqlsrvauth: |
+    connector.name=sqlserver
+    connection-url=jdbc:sqlserver://${ENV:MSSQLServerDBPathName};encrypt=false
+    # SQL Auth
+    connection-user=${ENV:MSSQLServerUsername}
+    connection-password=${ENV:MSSQLServerPassword}
+    metadata.cache-ttl=30m
+    metadata.cache-missing=true
+    join-pushdown.strategy=EAGER
+    #Kerberos Credential Passthrough
+    #sqlserver.authentication.type=KERBEROS_PASS_THROUGH
+    #http.authentication.krb5.config=/etc/krb5.conf
+    #http-server.authentication.krb5.service-name=exampleServiceName
+    #http-server.authentication.krb5.keytab=/path/to/Keytab/File
+    #
+    #Defined in the Coordinator adn Worker Cluster yaml:
+    #internal-communication.shared-secret=yourSecret
+    #node.internal-address-source=FQDN
+    #http-server.authentication.type=DELEGATED-KERBEROS
+    #http-server.authentication.krb5.service-name=exampleServiceName
+    #http.authentication.krb5.config=/etc/krb5.conf
+  snowflake_jdbc: |
+    connector.name=<snowflake_jdbc, snowflake_distributed, or snowflake_parallel>
+    connector.name=snowflake_jdbc
+    connection-url=jdbc:snowflake://${ENV:SnowflakeDBPathName}
+    connection-user=${ENV:SnowflakeUsername}
+    connection-password=${ENV:SnowflakePassword}
+    metadata.cache-ttl=30m
+    metadata.cache-missing=true
+    snowflake.warehouse=${ENV:SnowflakeWarehouse}
+    snowflake.database=${ENV:SnowflakeDatabase}
+    snowflake.role=${ENV:SnowflakeRole}
+    #managed-statistics.enabled=true
+  hive: |
+    connector.name=hive
+    hive.metastore.uri=thrift://hive:9083
+    hive.metastore-timeout=3m
+    hive.s3.aws-access-key=REDACTED
+    hive.s3.aws-secret-key=REDACTED
+    hive.s3.endpoint=
+    hive.s3.ssl.enabled=false
+    hive.s3.path-style-access=true
+    hive.s3.max-connections=1000
+    hive.parquet.use-column-names=true
+    hive.orc.use-column-names=true
+    hive.allow-drop-table=true
+    hive.allow-rename-table=true
+    hive.allow-register-partition-procedure=true
+    hive.create-empty-bucket-files=false
+    hive.non-managed-table-writes-enabled=true
+    hive.max-partitions-per-writers=5000
+    hive.timestamp-precision=NANOSECONDS
+    hive.s3.streaming.enabled=true
+    hive.compression-codec=ZSTD
+    hive.file-status-cache.max-retained-size=9765MB
+    hive.s3.max-error-retries=15
+    hive.s3.max-client-retries=15
+    hive.allow-comment-table=true
+    hive.allow-comment-column=true
+    hive.allow-add-column=true
+    hive.allow-drop-column=true
+    hive.allow-rename-column=true
+    hive.target-max-file-size=1TB
+    
+  
