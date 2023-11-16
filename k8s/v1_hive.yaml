@@ -1,12 +1,4 @@
-# 1. Replace <your_dbs_endpoint> with your RDS instance endpoint 
-#    (AWS ex. kp-bootcamp.cs8j7iukogcy.us-east-2.rds.amazonaws.com)
-#    (Azure ex. kp-bootcamp.postgres.database.azure.com)
-# 2. If you are working on labs in Azure then replace <abfs-account> with your blog storage account.
-#    (Azure ex. kplab01stg)
-# 3. If you are working on labs in Azure then replace <abfs-key> with your blog storage accounts access key.
-#    (Azure ex. VEys9BSb2BLAHV/DU4QRfQYxaGpHkJye9MUFAKENOTREAL0StSsX25J6qsfw+80JWBLAHnOww0tZWb930itLLA==)
-# 4. If youa re working on the labs in Azure then scroll down to the bottom to alter the comments in the
-#    objectStorage section.
+
 
 # # This affinity will ensure hive is deployed in the base node group.
 # affinity:
@@ -31,15 +23,15 @@
 database:
   external:
     driver: org.postgresql.Driver
-    jdbcUrl: jdbc.url=jdbc:postgresql://gm-bootcamp.cupdzjlj8tpf.eu-west-2.rds.amazonaws.com:5432/eks_hms
+    jdbcUrl: jdbc.url=jdbc:postgresql://YOUR_HOSTNAME.com:5432/eks_hms
     user: postgres
-    password: StarburstR0cks!
+    password: YOUR_PASSWORD
   type: external
 
 resources:
   requests:
     memory: "1Gi"
-    cpu: 0.25
+    cpu: 1
   limits:
     memory: "1Gi"
     cpu: 1
