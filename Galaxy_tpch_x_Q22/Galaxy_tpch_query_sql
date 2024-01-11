@@ -1,4 +1,5 @@
 --Set the Catalog and the schema prior to running, e.g. catalog=tpch and schema=sf1
+--Note: Data from tpch and tpcds schemas as generated at runtime, so Query results will change.
 --Q1
 SELECT
   returnflag,
