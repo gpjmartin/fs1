@@ -15,6 +15,11 @@ starburst.dataframe-api-enabled=true
 
 The above is enabled by default on Galaxy.
 
+**Note: If you are using BIAC or Ranger - you will also need to add a Privilege to the User's Role:
+
+https://docs.starburst.io/latest/client/python.html#enable-pystarburst-in-sep
+
+
 
 For more info on Notebooks and Python:
 
