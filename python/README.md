@@ -20,7 +20,7 @@ The above is enabled by default on Galaxy.
 https://docs.starburst.io/latest/client/python.html#enable-pystarburst-in-sep
 
 **Note: The Notebook uses a Table - sample.demo.missions
-This Tables exists by default in Galaxy - but you need to add the sample Catalog to a Cluster.
+This Tables exists by default in Galaxy - but you need to add the sample Catalog to a Cluster.</BR>
 If you are using Starburst Enterprise - the catalog/schema/table won't exist by default.
 One option is to sign up to Galaxy, download the file, and upload to an Object Store for Starburst to access.
 Another option is to create the Table manually. See DDL at the bottom of this page to give you a head start.
