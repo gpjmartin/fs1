@@ -45,3 +45,33 @@ WITH</BR>
     EXTERNAL_LOCATION = 's3://PUT_YOUR_ACCOUNT_HERE/mission/',</BR>
     skip_header_line_count = 1,</BR>
   );</BR>
+
+</BR>
+If you are unable to download the table/file - sample.demo.missions </BR>
+As a workaround, you can use synthetic data from the tpch schema. </BR>
+The SQL will load data into the sample.demo.missions table (~1m rows).</BR>
+The PyStarburst logic will work functionally - but the data won't mean anything, and the visual won't be informative. </BR>
+
+insert into sample.demo.missions2</BR>
+(</BR>
+SELECT</BR>
+  CAST(R.custkey as VARCHAR),</BR>
+  R.name, </BR>
+  W.name as nation,</BR>
+  date_format(cast((Q.shipdate + interval '10' year) as TIMESTAMP with time zone ),'%a %b %d, %Y %H:%i UTC' ),</BR>
+  R.mktsegment,</BR>
+  P.orderstatus,</BR>
+  CAST(R.acctbal as VARCHAR),</BR>
+  P.orderpriority</BR>
+FROM</BR>
+  tpch.tiny.customer AS R</BR>
+  INNER JOIN tpch.tiny.orders AS P ON R.CUSTKEY = P.CUSTKEY</BR>
+  INNER JOIN tpch.tiny.lineitem AS Q ON P.ORDERKEY = Q.ORDERKEY</BR>
+  INNER JOIN tpch.tiny.supplier AS T ON Q.SUPPKEY = T.SUPPKEY</BR>
+  INNER JOIN tpch.tiny.partsupp AS U ON T.SUPPKEY = U.SUPPKEY</BR>
+  INNER JOIN tpch.tiny.part AS V ON U.PARTKEY = V.PARTKEY</BR>
+  INNER JOIN tpch.tiny.nation AS W ON T.NATIONKEY = W.NATIONKEY</BR>
+  INNER JOIN tpch.tiny.region AS X ON W.REGIONKEY = X.REGIONKEY</BR>
+WHERE</BR>
+  X.NAME = 'EUROPE' </BR>
+)</BR>
