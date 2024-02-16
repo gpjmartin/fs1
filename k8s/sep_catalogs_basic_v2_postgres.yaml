@@ -7,6 +7,6 @@ catalogs:
     connector.name=jmx
   postgres: |
     connector.name=postgresql
-    connection-url=jdbc:postgresql://postgresql.cupdzjlj8tpf.eu-west-2.rds.amazonaws.com:5432/stsfourtwseven
+    connection-url=jdbc:postgresql://$YOUR_HOST_HERE:5432/stsfourtwseven
     connection-user=postgres
     connection-password=Starburst
