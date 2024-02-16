@@ -24,7 +24,7 @@ The above command will prompt you for a password.
 
 Given the vanilla install settings, it is possible to get an out of memory issue.
 Increase the following settings on the coordinator and worker, and push the configs using starburst admin commands.
-Note: Ignore the jvm settings for a k8s cluster.
+Note: Ignore the jvm settings for a k8s cluster. Note: Ignore for k8s clusters.
 
 jvm.config.j2: </br>
 -Xmx48G </br>
