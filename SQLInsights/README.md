@@ -34,7 +34,7 @@ CPU Load on the Cluster:</br>
 Completed Queries - Grouped by Date and Hour:</br>
 
     SELECT
-        date_trunc('hour', create_time),
+        date_trunc('hour', create_time) hour,
         count(*) as count
     FROM
         postgres.public.completed_queries
@@ -45,19 +45,19 @@ Completed Queries - Grouped by Date and Hour:</br>
     
 Users, Tables, Catalogs:</br>
     
-    select
+    SELECT
         count(*) as count,
         completed_queries.usr,
         query_tables.table_name
-    from
+    FROM
         postgres.public.completed_queries,
         postgres.public.query_tables
-    where
+    WHERE
         completed_queries.query_id = query_tables.query_id
-    group by
+    GROUP BY
         usr,
         table_name
-    order by
+    ORDER BY
         1 desc;
     
 High Level Queries by Catalog, Schema, Tables:</br>
@@ -81,31 +81,31 @@ High Level Queries by Catalog, Schema, Tables:</br>
 
  Completed Queries - Grouped by User and Table:</br>
  
-    select
+    SELECT
         count(*) as count,
         completed_queries.usr,
         query_tables.table_name
-    from
+    FROM
         postgres.public.completed_queries,
         postgres.public.query_tables
-    where
+    WHERE
         completed_queries.query_id = query_tables.query_id
-    group by
+    GROUP BY
         usr,
         table_name
-    order by
+    ORDER BY
         1 desc;       
 
 Distinct Users by Day:</br>
     
-    select
+    SELECT
         date_trunc('day', create_time) Day,
         count(distinct usr) as Distinct_Users
-    from
+    FROM
         postgres.public.completed_queries
-    group by
+    GROUP BY
         date_trunc('day', create_time)
-    order by
+    ORDER BY
         1 desc;
 
 Show aggregate total of cpu time for all queries grouped by users:</br>
@@ -115,7 +115,8 @@ Show aggregate total of cpu time for all queries grouped by users:</br>
         sum(cpu_time_ms / (1000 * 60) % 60) as total_cpu_time_minutes,
         sum(cpu_time_ms / (1000 * 60 * 60) % 24) as total_cpu_time_hours
     FROM "postgres"."public"."completed_queries"
-    GROUP BY usr;
+    GROUP BY usr
+    ORDER BY 2 desc;
 
 Get Cluster Metrics during highest concurrency of running queries:</br>
 
