@@ -8,7 +8,8 @@ The Core Tables are: </br>
             completed_queries</br>
             usage_metrics</br>
   
-Some examples - You will likely need to change the catalog name to match the Insights Database:</br>
+Some examples - You will likely need to change the catalog name to match the Insights Database.</br> 
+The below exampels assume the backend database and schema is "postgres"."public":</br>
 </br>
 Check Active Environment:</br>
 
