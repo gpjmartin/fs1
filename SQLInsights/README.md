@@ -12,7 +12,7 @@ Some examples - You will likely need to change the catalog name to match the Ins
 </br>
 Check Active Node:</br>
 
-    SELECT * FROM "postgres"."public"."usage_metrics" LIMIT 10;</br>
+    SELECT * FROM "postgres"."public"."usage_metrics" LIMIT 10;
 
 
 CPU Load on the Cluster:</br>
