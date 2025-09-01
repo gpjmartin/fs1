@@ -10,9 +10,9 @@ The Core Tables are: </br>
   
 Some examples - You will likely need to change the catalog name to match the Insights Database:</br>
 </br>
-Check Active Node:</br>
+Check Active Environment:</br>
 
-    SELECT * FROM "postgres"."public"."usage_metrics" LIMIT 10;
+    SELECT * FROM "postgres"."public"."usage_metrics" order by sample_time desc LIMIT 10;
 
 
 CPU Load on the Cluster:</br>
