@@ -99,8 +99,8 @@ High Level Queries by Catalog, Schema, Tables:</br>
 Distinct Users by Day:</br>
     
     select
-        date_trunc('day', create_time) Distinct_Users,
-        count(distinct usr) as count
+        date_trunc('day', create_time) Day,
+        count(distinct usr) as Distinct_Users
     from
         postgres.public.completed_queries
     group by
