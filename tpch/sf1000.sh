@@ -1,8 +1,8 @@
 #!/bin/bash
 SCHEMA=sf1000
 PREFIX=hive.gmtpch
-FORMAT=\'ORC\'
-#FORMAT=\'PARQUET\'
+#FORMAT=\'ORC\'
+FORMAT=\'PARQUET\'
 COLUMN=shipdate
 ITERATIONS=4
 UNIT=quarter
