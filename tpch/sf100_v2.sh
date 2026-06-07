@@ -1,8 +1,8 @@
 #!/bin/bash
 SCHEMA=sf100
 PREFIX=hive.gmtpch
-FORMAT=\'ORC\'
-#FORMAT=\'PARQUET\'
+#FORMAT=\'ORC\'
+FORMAT=\'PARQUET\'
 echo 'set session resource_overcommit=true;'
 echo 'set session use_preferred_write_partitioning=true;'
 for i in 'lineitem'
