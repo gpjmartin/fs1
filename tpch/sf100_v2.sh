@@ -1,6 +1,6 @@
 #!/bin/bash
 SCHEMA=sf100
-PREFIX=hive.gmtpch
+PREFIX=starburst_catalog_iceberg.iceberg
 #FORMAT=\'ORC\'
 FORMAT=\'PARQUET\'
 echo 'set session resource_overcommit=true;'
