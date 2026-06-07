@@ -13,7 +13,6 @@
 SCHEMA=sf100
 PREFIX=hive.gmtpch
 echo 'set session resource_overcommit=true;'
-echo 'set session preferred_write_partitioning_min_number_of_partitions=1;'
 echo 'set session use_preferred_write_partitioning=true;'
 for i in 'lineitem' 'orders' 'customer' 'nation' 'part' 'partsupp' 'region' 'supplier'
 	do
