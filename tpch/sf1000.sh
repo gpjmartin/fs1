@@ -7,7 +7,6 @@ COLUMN=shipdate
 ITERATIONS=4
 UNIT=quarter
 echo 'set session resource_overcommit=true;'
-echo 'set session preferred_write_partitioning_min_number_of_partitions=1;'
 echo 'set session use_preferred_write_partitioning=true;'
 for i in 'lineitem'
 do
