@@ -16,7 +16,7 @@ echo 'set session resource_overcommit=true;'
 echo 'set session use_preferred_write_partitioning=true;'
 for i in 'lineitem' 'orders' 'customer' 'nation' 'part' 'partsupp' 'region' 'supplier'
 	do
-		echo 'drop table' $PREFIX$SCHEMA.$i';'
-		echo 'create table' $PREFIX$SCHEMA.$i as 'SELECT * from tpch.'$SCHEMA.$i';'
-		echo 'analyze' $PREFIX$SCHEMA.$i';'
+		echo 'drop table' $PREFIX.$SCHEMA.$i';'
+		echo 'create table' $PREFIX.$SCHEMA.$i as 'SELECT * from tpch.'$SCHEMA.$i';'
+		echo 'analyze' $PREFIX.$SCHEMA.$i';'
 	done
