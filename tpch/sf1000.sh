@@ -1,6 +1,6 @@
 #!/bin/bash
 SCHEMA=sf1000
-PREFIX=hive.gmtpch
+PREFIX=starburst_catalog_iceberg.iceberg
 #FORMAT=\'ORC\'
 FORMAT=\'PARQUET\'
 COLUMN=shipdate
