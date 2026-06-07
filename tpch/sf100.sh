@@ -11,7 +11,7 @@
 # create schema hive.gmtpchsf100 WITH (location = 'gs://hsbc-gcs/gmtpchsf100/');
 ### Script runs from here
 SCHEMA=sf100
-PREFIX=hive.gmtpch
+PREFIX=starburst_catalog_iceberg.iceberg
 echo 'set session resource_overcommit=true;'
 echo 'set session use_preferred_write_partitioning=true;'
 for i in 'lineitem' 'orders' 'customer' 'nation' 'part' 'partsupp' 'region' 'supplier'
