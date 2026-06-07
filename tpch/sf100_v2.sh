@@ -1,6 +1,6 @@
 #!/bin/bash
 SCHEMA=sf100
-PREFIX=starburst_catalog_iceberg.iceberg
+PREFIX=starburst_catalog_iceberg
 #FORMAT=\'ORC\'
 FORMAT=\'PARQUET\'
 echo 'set session resource_overcommit=true;'
