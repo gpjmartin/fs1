@@ -1,6 +1,6 @@
 #!/bin/bash
 SCHEMA=sf1000
-PREFIX=starburst_catalog_iceberg.iceberg
+PREFIX=starburst_catalog_iceberg
 #FORMAT=\'ORC\'
 FORMAT=\'PARQUET\'
 COLUMN=shipdate
