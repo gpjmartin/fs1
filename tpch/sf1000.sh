@@ -6,6 +6,7 @@ FORMAT=\'PARQUET\'
 COLUMN=shipdate
 ITERATIONS=4
 UNIT=quarter
+PARTITION=\'shipdate\'
 echo 'set session resource_overcommit=true;'
 echo 'set session use_preferred_write_partitioning=true;'
 for i in 'lineitem'
@@ -13,7 +14,7 @@ do
 	echo -- $i
 	echo values \'$i\' ';'
 	echo 'drop table if exists' $PREFIX.$SCHEMA.$i';'
-	echo 'create table' $PREFIX.$SCHEMA.$i 'with (format ='$FORMAT') as SELECT * from tpch.'$SCHEMA.$i 'with no data;'
+	echo 'create table' $PREFIX.$SCHEMA.$i 'with (format ='$FORMAT', partitioning = ARRAY['$PARTITION']) as SELECT * from tpch.'$SCHEMA.$i 'with no data;'
 	for j in '1992' '1993' '1994' '1995' '1996' '1997' '1998'
 	do
 		for ((x = 1 ; x < $ITERATIONS +1 ; x++)); do
