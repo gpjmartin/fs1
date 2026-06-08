@@ -8,7 +8,7 @@ echo 'set session use_preferred_write_partitioning=true;'
 for i in 'lineitem'
 do
 	echo 'drop table if exists' $PREFIX.$SCHEMA.$i';'
-	echo 'create table' $PREFIX$SCHEMA.$i 'with (format ='$FORMAT') as SELECT * from tpch.'$SCHEMA.$i 'with no data;'
+	echo 'create table' $PREFIX.$SCHEMA.$i 'with (format ='$FORMAT') as SELECT * from tpch.'$SCHEMA.$i 'with no data;'
 	echo -- $i
 	for j in '1992' '1993' '1994' '1995' '1996' '1997' '1998'
 	do
