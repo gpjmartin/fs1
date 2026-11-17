@@ -1,0 +1,308 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Jira Cloud REST API (reduced subset)",
+    "description": "An unofficial, reduced description of a few read-only Jira Cloud platform REST API v3 endpoints, for testing OpenAPI-based tooling. It is not published or endorsed by Atlassian. See the official Jira Cloud REST API documentation for the authoritative definition. Authentication is not described here: configure it in the client (HTTP Basic with account email and API token).",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://your-domain.atlassian.net"
+    }
+  ],
+  "paths": {
+    "/rest/api/3/myself": {
+      "get": {
+        "operationId": "getCurrentUser",
+        "summary": "Get current user",
+        "responses": {
+          "200": {
+            "description": "Returned if the request is successful.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/api/3/project/search": {
+      "get": {
+        "operationId": "searchProjects",
+        "summary": "Get projects paginated",
+        "parameters": [
+          {
+            "name": "startAt",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "maxResults",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Filter projects by name or key.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returned if the request is successful.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectPage"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/api/3/search/jql": {
+      "get": {
+        "operationId": "searchIssuesByJql",
+        "summary": "Search for issues using JQL",
+        "parameters": [
+          {
+            "name": "jql",
+            "in": "query",
+            "description": "A bounded JQL query, for example: project = ABC ORDER BY updated DESC",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Comma-separated list of fields to return, for example: summary,status,assignee",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "maxResults",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "nextPageToken",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returned if the request is successful.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IssueSearchResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/api/3/issue/{issueIdOrKey}": {
+      "get": {
+        "operationId": "getIssue",
+        "summary": "Get issue",
+        "parameters": [
+          {
+            "name": "issueIdOrKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Comma-separated list of fields to return.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returned if the request is successful.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Issue"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "accountId": {
+            "type": "string"
+          },
+          "accountType": {
+            "type": "string"
+          },
+          "displayName": {
+            "type": "string"
+          },
+          "emailAddress": {
+            "type": "string"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "timeZone": {
+            "type": "string"
+          }
+        }
+      },
+      "Project": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "projectTypeKey": {
+            "type": "string"
+          },
+          "style": {
+            "type": "string"
+          },
+          "isPrivate": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ProjectPage": {
+        "type": "object",
+        "properties": {
+          "startAt": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "maxResults": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "isLast": {
+            "type": "boolean"
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Project"
+            }
+          }
+        }
+      },
+      "NamedItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "IssueFields": {
+        "type": "object",
+        "properties": {
+          "summary": {
+            "type": "string"
+          },
+          "created": {
+            "type": "string"
+          },
+          "updated": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/NamedItem"
+          },
+          "priority": {
+            "$ref": "#/components/schemas/NamedItem"
+          },
+          "issuetype": {
+            "$ref": "#/components/schemas/NamedItem"
+          },
+          "assignee": {
+            "$ref": "#/components/schemas/User"
+          }
+        }
+      },
+      "Issue": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "fields": {
+            "$ref": "#/components/schemas/IssueFields"
+          }
+        }
+      },
+      "IssueSearchResult": {
+        "type": "object",
+        "properties": {
+          "isLast": {
+            "type": "boolean"
+          },
+          "nextPageToken": {
+            "type": "string"
+          },
+          "issues": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Issue"
+            }
+          }
+        }
+      }
+    }
+  }
+}
